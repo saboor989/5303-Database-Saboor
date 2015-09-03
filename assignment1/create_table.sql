@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `Last` varchar(32) NOT NULL,
   `Street` varchar(48) NOT NULL,
   `City` varchar(40) NOT NULL,
-  `State` varchar(16) NOT NULL,
+  `State` varchar(20) NOT NULL,
   `Zip` varchar(32) NOT NULL,
   `Email` varchar(48) NOT NULL,
   `UserName` varchar(32) NOT NULL,
@@ -19,4 +19,5 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `Picture` varchar(64) NOT NULL,
   PRIMARY KEY (`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
