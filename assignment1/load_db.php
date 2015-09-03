@@ -35,6 +35,8 @@ for($i=0;$i<sizeof($json_array->results);$i++)
 	$phone = $json_array->results[$i]->user->phone;
 	$picture = $json_array->results[$i]->user->picture->medium;
 	
+    
+    //checking the email if present in the table
     //echo "'$dob'"."\n";
     $sql = "
 			SELECT *
@@ -42,19 +44,22 @@ for($i=0;$i<sizeof($json_array->results);$i++)
 			WHERE email = '{$email}'
 			";
 	//echo $sql1."\n";		
+    //killing the sql with an error
 	if(!$result = $db->query($sql))
 	{
 		die('There was an error running the query [' . $db->error . ']');
 	}
+    //The result, if number of rows is 0
 	if(!$result->num_rows > 0)
 	{
-      
+      //query to insert the data in the table
 		$sql1 = "
 				INSERT INTO Users
 				VALUES('$gender','$title','$first','$last','$street','$city','$state','$zip','$email','$username','$password','$dob','$phone','$picture')
 				";
 		#echo $sql1."\n";	
 		
+        //throwing the error
 		if(!$result1 = $db->query($sql1))
 		{
 			echo('['.$db->error.']');
