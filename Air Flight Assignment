@@ -1,21 +1,21 @@
-### Title: Sql Flight Assignment
-### Your Name: Saboor Ahmed Siddiqie    
+### Title: Sql Flight Assignment###
+### Your Name: Saboor Ahmed Siddiqie###    
 
-#### Question 1:
+#### Question 1:####
 Print a passenger list for flight 3 on 4-1
 
 SQL:
-````
+```
 SELECT passengers.passid, name
 FROM passengers
 join pass_ticketed 
 on passengers.passid=pass_ticketed.passid
 WHERE fltno =3
 AND DATE =  '4-1'
-````
+```
 
-#### Answer:
-````
+#### Answer:####
+```
 passid |	name	
 1102 |	Duck, Donald
 1011 | Wayne, John
@@ -23,7 +23,7 @@ passid |	name
 1013 |	Marvin, Lee
 1014 |	Romero, Cesar
 1015 |	Lamour, Dorothy
-````
+```
 
 
 #### Question 2:
